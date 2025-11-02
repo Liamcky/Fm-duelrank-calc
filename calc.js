@@ -92,7 +92,7 @@ const duelConfig = {
 //Berechnung des Gesamtscores
 function calculateDuelScore(stats) {
   let score = duelConfig.basePoints;
-
+  console.log(stats);
   score += duelConfig.victoryConditions[stats.victoryCondition] || 0;
   score += duelConfig.turns[stats.turns] || 0;
   score += duelConfig.effectiveAttacks[stats.effectiveAttacks] || 0;
