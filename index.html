@@ -26,16 +26,104 @@
         </select>
       </label>
 
-      <label>Turns <input id="turns" type="text" pattern="\d*" maxlength="2" value="6"></label>
-      <label>Effective attacks <input id="effectiveAttacks" type="text" pattern="\d*" maxlength="2" size="2" value="3"></label>
-      <label>Defensive wins <input id="defensiveWins" type="text" pattern="\d*" maxlength="2" size="2" value="1"></label>
-      <label>Face-Down plays <input id="faceDownPlays" type="text" pattern="\d*" maxlength="2" size="2" value="5"></label>
-      <label>Fusions initiated <input id="initiateFusion" type="text" pattern="\d*" maxlength="2" size="2" value="2"></label>
-      <label>Equip used <input id="equipMagic" type="text" pattern="\d*" maxlength="2" size="2" value="1"></label>
-      <label>Pure Magic used <input id="pureMagic" type="text" pattern="\d*" maxlength="2" size="2" value="2"></label>
-      <label>Traps triggered <input id="triggerTrap" type="text" pattern="\d*" maxlength="2" size="2" value="0"></label>
-      <label>Cards used <input id="cardsUsed" type="text" pattern="\d*" maxlength="2" size="2" value="20"></label>
-      <label>Remaining LP <input id="remainingLP" type="text" pattern="\d*" max="8000" maxlength="4" size="4" value="7500"></label>
+      <label>Turns 
+        <select id="turns">
+          <option>00-04</option>
+          <option>05-08</option>
+          <option>09-28</option>
+          <option>29-32</option>
+          <option>33-36</option>
+        </select>
+      </label>
+      
+      <label>Effective attacks <select id="effectiveAttacks">
+          <option>00-01</option>
+          <option>02-03</option>
+          <option>04-09</option>
+          <option>10-19</option>
+          <option>20</option>
+        </select>
+      </label>
+      
+      <label>Defensive wins 
+      <select id="defensiveWins">
+          <option>00-01</option>
+          <option>02-05</option>
+          <option>06-09</option>
+          <option>10-14</option>
+          <option>15</option>
+        </select>
+      </label>
+      
+      <label>Face-Down plays 
+        <select id="faceDownPlays">
+          <option>00-00</option>
+          <option>01-10</option>
+          <option>11-20</option>
+          <option>21-30</option>
+          <option>31-36</option>
+        </select>
+      </label>
+      
+      <label>Fusions initiated 
+        <select id="initiateFusion">
+          <option>00-00</option>
+          <option>01-04</option>
+          <option>05-09</option>
+          <option>10-14</option>
+          <option>15</option>
+        </select>
+      </label>
+      
+      <label>Equip used 
+      <select id="equipMagic">
+          <option>00-00</option>
+          <option>01-04</option>
+          <option>05-09</option>
+          <option>10-14</option>
+          <option>15</option>
+        </select>
+      </label>
+      
+      <label>Pure Magic used
+      <select id="pureMagic">
+          <option>00-00</option>
+          <option>01-03</option>
+          <option>04-06</option>
+          <option>07-09</option>
+          <option>10-36</option>
+        </select>
+      </label>
+      
+      <label>Traps triggered
+      <select id="triggerTrap">
+          <option>00-00</option>
+          <option>01-02</option>
+          <option>03-04</option>
+          <option>05-06</option>
+          <option>07-36</option>
+        </select>
+      </label>
+      
+      <label>Cards used 
+      <select id="cardsUsed">
+          <option>00-08</option>
+          <option>09-012</option>
+          <option>13-32</option>
+          <option>33-36</option>
+          <option>37-40</option>
+        </select>
+      </label>
+      
+      <label>Remaining LP 
+      <select id="remainingLP">
+          <option>0000-0099</option>
+          <option>0100-0999</option>
+          <option>1000-6999</option>
+          <option>7000-7999</option>
+          <option>8000</option>
+        </select>
+      </label>
     </form>
 
     <div id="result">Ergebnis: —</div>
