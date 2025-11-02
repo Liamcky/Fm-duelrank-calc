@@ -92,7 +92,6 @@ const duelConfig = {
 //Berechnung des Gesamtscores
 function calculateDuelScore(stats) {
   let score = duelConfig.basePoints;
-  console.log(stats);
   score += duelConfig.victoryConditions[stats.victoryCondition] || 0;
   score += duelConfig.turns[stats.turns] || 0;
   score += duelConfig.effectiveAttacks[stats.effectiveAttacks] || 0;
@@ -126,16 +125,16 @@ const result = document.getElementById("result");
     form.addEventListener("input", () => {
       const stats = {
         victoryCondition: form.victoryCondition.value,
-        turns: +form.turns.value,
-        effectiveAttacks: +form.effectiveAttacks.value,
-        defensiveWins: +form.defensiveWins.value,
-        faceDownPlays: +form.faceDownPlays.value,
-        initiateFusion: +form.initiateFusion.value,
-        equipMagic: +form.equipMagic.value,
-        pureMagic: +form.pureMagic.value,
-        triggerTrap: +form.triggerTrap.value,
-        cardsUsed: +form.cardsUsed.value,
-        remainingLP: +form.remainingLP.value
+        turns: form.turns.value,
+        effectiveAttacks: form.effectiveAttacks.value,
+        defensiveWins: form.defensiveWins.value,
+        faceDownPlays: form.faceDownPlays.value,
+        initiateFusion: form.initiateFusion.value,
+        equipMagic: form.equipMagic.value,
+        pureMagic: form.pureMagic.value,
+        triggerTrap: form.triggerTrap.value,
+        cardsUsed: form.cardsUsed.value,
+        remainingLP: form.remainingLP.value
       };
       const { score, rank } = calculateDuelScore(stats);
       result.textContent = `Ergebnis: ${score} Punkte und Rang: ${rank}`;
