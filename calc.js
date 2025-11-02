@@ -103,7 +103,7 @@ function calculateDuelScore(stats) {
   score += duelConfig.pureMagic[stats.pureMagic] || 0;
   score += duelConfig.triggerTrap[stats.triggerTrap] || 0;
   score += duelConfig.cardsUsed[stats.cardsUsed] || 0;
-  score += duelConfig.remainingLP[stats.remainingLP] ||0 ;
+  score += duelConfig.remainingLP[stats.remainingLP] || 0;
 
   //Begrenzung auf 0–99
   score = Math.max(0, Math.min(99, score));
