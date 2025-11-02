@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duel Rank Calculator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#111; color:#eee; padding:20px; }
+    h1 { text-align:center; color:#6cf; }
+    form { display:grid; grid-template-columns:1fr 1fr; gap:10px; max-width:600px; margin:0 auto; }
+    label { display:flex; flex-direction:column; font-size:14px; }
+    input, select { padding:6px; font-size:14px; border-radius:6px; border:none; margin-top:3px; }
+    #result { text-align:center; margin-top:20px; font-size:20px; font-weight:bold; color:#0f0; }
+    .container { background:#222; padding:20px; border-radius:12px; box-shadow:0 0 10px #000; }
+  </style>
+</head>
+<body>
+  <h1>Yu-Gi-Oh! Duel Rank Calculator</h1>
+  <div class="container">
+    <form id="duelForm">
+      <label>Victory Condition
+        <select id="victoryCondition">
+          <option>Total Annihilation</option>
+          <option>Victory by Attrition</option>
+          <option>Exodia Win</option>
+        </select>
+      </label>
+
+      <label>Turns <input id="turns" type="number" min="0" value="6"></label>
+      <label>Effective Attacks <input id="effectiveAttacks" type="number" min="0" value="3"></label>
+      <label>Defensive Wins <input id="defensiveWins" type="number" min="0" value="1"></label>
+      <label>Face-Down Plays <input id="faceDownPlays" type="number" min="0" value="5"></label>
+      <label>Fusions Initiated <input id="initiateFusion" type="number" min="0" value="2"></label>
+      <label>Equip Magic Used <input id="equipMagic" type="number" min="0" value="1"></label>
+      <label>Pure Magic Used <input id="pureMagic" type="number" min="0" value="2"></label>
+      <label>Traps Triggered <input id="triggerTrap" type="number" min="0" value="0"></label>
+      <label>Cards Used <input id="cardsUsed" type="number" min="0" value="20"></label>
+      <label>Remaining LP <input id="remainingLP" type="number" min="0" max="8000" value="7500"></label>
+    </form>
+
+    <div id="result">Ergebnis: —</div>
+  </div>
+  <script> ~/calc.js</script>
+</body>
+</html>
