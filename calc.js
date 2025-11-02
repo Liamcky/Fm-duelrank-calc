@@ -88,34 +88,22 @@ const duelConfig = {
     "8000": 6
   }
 };
-//min max bestimmen pro Eigenschaft 
-function getRangeValue(ranges, value) {
-  for (const [range, points] of Object.entries(ranges)) {
-    const [min, max] = range.split('-').map(n => parseInt(n, 10));
-    if (isNaN(max)) {
-      if (value >= min) return points;
-    } else if (value >= min && value <= max) {
-      return points;
-    }
-  }
-  return 0;
-}
 
 //Berechnung des Gesamtscores
 function calculateDuelScore(stats) {
   let score = duelConfig.basePoints;
 
   score += duelConfig.victoryConditions[stats.victoryCondition] || 0;
-  score += getRangeValue(duelConfig.turns, stats.turns);
-  score += getRangeValue(duelConfig.effectiveAttacks, stats.effectiveAttacks);
-  score += getRangeValue(duelConfig.defensiveWins, stats.defensiveWins);
-  score += getRangeValue(duelConfig.faceDownPlays, stats.faceDownPlays);
-  score += getRangeValue(duelConfig.initiateFusion, stats.initiateFusion);
-  score += getRangeValue(duelConfig.equipMagic, stats.equipMagic);
-  score += getRangeValue(duelConfig.pureMagic, stats.pureMagic);
-  score += getRangeValue(duelConfig.triggerTrap, stats.triggerTrap);
-  score += getRangeValue(duelConfig.cardsUsed, stats.cardsUsed);
-  score += getRangeValue(duelConfig.remainingLP, stats.remainingLP);
+  score += duelConfig.turns[stats.turns] || 0;
+  score += duelConfig.effectiveAttacks[stats.effectiveAttacks] || 0;
+  score += duelConfig.defensiveWins[stats.defensiveWins] || 0;
+  score += duelConfig.faceDownPlays[stats.faceDownPlays] || 0;
+  score += duelConfig.initiateFusion[stats.initiateFusion] || 0;
+  score += duelConfig.equipMagic[stats.equipMagic] || 0;
+  score += duelConfig.pureMagic[stats.pureMagic] || 0;
+  score += duelConfig.triggerTrap[stats.triggerTrap] || 0;
+  score += duelConfig.cardsUsed[stats.cardsUsed] || 0;
+  score += duelConfig.remainingLP[stats.remainingLP] ||0 ;
 
   //Begrenzung auf 0–99
   score = Math.max(0, Math.min(99, score));
